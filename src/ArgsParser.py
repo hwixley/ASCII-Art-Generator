@@ -29,7 +29,7 @@ class ArgsParser:
             return None
         
     def get_bw_image(self, new_width: int = 80):
-        img_path = self.get_arg("-i", "--img", default=f"{os.getcwd()}/../data/cage.jpg")
+        img_path = self.get_arg("-i", "--img", default=f"{os.path.dirname(os.path.realpath(__file__))}/../data/cage.jpg")
 
         if img_path is None:
             return None
