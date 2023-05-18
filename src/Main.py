@@ -7,7 +7,7 @@ args = sys.argv
 def tuple_set(seq):
     return {tuple(item) for item in seq}
 
-img = Image.open('../data/cage.jpg').convert('L')
+img = Image.open('../data/panki.jpeg').convert('L')
 
 ratio = img.size[0] / img.size[1]
 new_width = 80
