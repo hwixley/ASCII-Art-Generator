@@ -21,15 +21,11 @@ Input image                |  Output ASCII
    ```
    pip install -r requirements.txt
    ```
-3. Make the script executable (if you want to use Shell):
-   ```
-   chmod +x ascii-art-generator.sh
-   ```
 
 ## Run the script
 You can run the script using shell:
 ```
-./ascii-art-generator.sh
+chmod +x ascii-art-generator.sh && ./ascii-art-generator.sh
 ```
 Or using python:
 ```
