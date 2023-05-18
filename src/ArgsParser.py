@@ -40,7 +40,7 @@ class ArgsParser:
             return np.array(img)
         
     def get_charset(self):
-        DEFAULT_CHARSET = "medium"
+        DEFAULT_CHARSET = "small"
         val = self.get_arg("-c", "--charset", default=DEFAULT_CHARSET)
 
         if val is None:
@@ -64,7 +64,7 @@ class ArgsParser:
             return val
     
     def get_lower_ptg(self):
-        DEFAULT_LOWER_PTG = 0.1
+        DEFAULT_LOWER_PTG = 0.2
         val = float(self.get_arg("-l", "--lower-ptg", default=DEFAULT_LOWER_PTG))
         if val is None:
             return DEFAULT_LOWER_PTG
@@ -76,7 +76,7 @@ class ArgsParser:
             
     
     def get_upper_ptg(self):
-        DEFAULT_UPPER_PTG = 0.5
+        DEFAULT_UPPER_PTG = 0.4
         val = float(self.get_arg("-u", "--upper-ptg", default=DEFAULT_UPPER_PTG))
         if val is None:
             return DEFAULT_UPPER_PTG
