@@ -7,7 +7,7 @@ args = sys.argv
 def tuple_set(seq):
     return {tuple(item) for item in seq}
 
-img = Image.open('../data/panki.jpeg').convert('L')
+img = Image.open('../data/fractal.webp').convert('L')
 
 ratio = img.size[0] / img.size[1]
 new_width = 80
@@ -28,7 +28,7 @@ else:
     charset2 = " .~+=@#"
     charset3 = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{\}[]?-_+~<>i!lI;:,\"^`'."
     charset4 = " .:-=+*#%@"
-    charset = charset4
+    charset = charset1
     ptg_types = ["linear", "log", "exp"]
     ptg_type = ptg_types[0]
     min_ptg = float(args[1]) if len(args) > 1 else 0.1
