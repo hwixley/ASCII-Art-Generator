@@ -35,7 +35,7 @@ else:
     max_ptg = float(args[2]) if len(args) > 2 else 0.5
     ptgs = np.empty(len(charset))
     if ptg_type == "linear":
-        ptgs = np.linspace(min_ptg, max_ptg, len(charset)-1).tolist() + [1]
+        ptgs = [0] + np.linspace(min_ptg, max_ptg, len(charset)-2).tolist() + [1]
     elif ptg_type == "log":
         ptgs = np.logspace(min_ptg, np.log10(max_ptg), len(charset)-1).tolist() + [1]
     elif ptg_type == "exp":
@@ -45,7 +45,7 @@ else:
 
     for i, ptg in enumerate(ptgs):
         last_ptg = ptgs[i-1] if i > 0 else 0
-        lt_idxs = tuple_set(np.argwhere(img_arr < ptg * 255).tolist()) # and img_arr >= last_ptg * 255)
+        lt_idxs = tuple_set(np.argwhere(img_arr < ptg * 255).tolist())
         gt_idxs = tuple_set(np.argwhere(img_arr >= last_ptg * 255).tolist())
 
         idxs = list(set(lt_idxs).intersection(gt_idxs))
