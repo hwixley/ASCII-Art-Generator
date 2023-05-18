@@ -44,7 +44,7 @@ All the following arguments are optional.
 `-s <sampler>` or `--sampler <sampler>`
 
 - __Lower Bound:__ the lower bound of pixel density sampling, defaults to `0.2`. Bounded in the range [0,1].
-  `-l <lower-ptg>` or `--lower-ptg <lower-ptg>`
+`-l <lower-ptg>` or `--lower-ptg <lower-ptg>`
 
 - __Upper Bound:__ the upper bound of pixel density sampling, defaults to `0.4`. Bounded in the range [0,1].
 `-u <upper-ptg>` or `--upper-ptg <upper-ptg>`
