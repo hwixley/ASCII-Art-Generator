@@ -29,11 +29,11 @@ Input image                |  Output ASCII
 ## Run the script
 You can run the script using shell:
 ```
-./ascii-art-generator.sh <args?>
+./ascii-art-generator.sh
 ```
 Or using python:
 ```
-python src/ascii_art.py <args?>
+python src/ascii_art.py
 ```
 
 ## Arguments
