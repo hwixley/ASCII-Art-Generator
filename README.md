@@ -1,4 +1,7 @@
 # ASCII Art Generator
+<hr>
+![CODEQL](https://github.com/hwixley/ascii-art-generator/actions/workflows/codeql.yml/badge.svg)
+<hr
 
 A customisable script to transform images into ASCII art.
 
