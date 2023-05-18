@@ -2,6 +2,10 @@
 
 A simple script to transform images into ASCII art.
 
+Input image             |  Output ASCII
+:-------------------------:|:-------------------------:
+![cage](https://github.com/hwixley/ascii-art-generator/assets/57837950/78999d39-c373-4e42-96c2-6f1556c5efbc) | ![cage-ascii2](https://github.com/hwixley/ascii-art-generator/assets/57837950/61314a88-f89e-4646-95b4-1a509ecc6cce)
+
 ## Installation
 
 1. Clone the repository:
