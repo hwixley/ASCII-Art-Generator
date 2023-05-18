@@ -28,12 +28,21 @@ class ArgsParser:
         except ValueError:
             return None
         
-    def get_bw_image(self, new_width: int = 80):
-        img_path = self.get_arg("-i", "--img", default=f"{os.path.dirname(os.path.realpath(__file__))}/../data/cage.jpg")
+    def get_resized_bw_img(self):
+        DEFAULT_IMG = f"{os.path.dirname(os.path.realpath(__file__))}/../data/cage.jpg"
+        img_path = self.get_arg("-i", "--img", default=DEFAULT_IMG)
+        new_width = self.get_img_width()
 
         if img_path is None:
             return None
         else:
+            if not os.path.exists(img_path):
+                # print(os.getcwd())
+                if os.path.exists(f"{os.getcwd()}/{img_path}"):
+                    img_path = f"{os.getcwd()}/{img_path}"
+                else:
+                    print("Invalid image path. Using default image.")
+                    img_path = DEFAULT_IMG
             img = Image.open(img_path).convert('L')
             ratio = img.size[0] / img.size[1]
             img = img.resize((new_width, int(new_width / ratio)))
@@ -66,6 +75,7 @@ class ArgsParser:
     def get_lower_ptg(self):
         DEFAULT_LOWER_PTG = 0.2
         val = float(self.get_arg("-l", "--lower-ptg", default=DEFAULT_LOWER_PTG))
+
         if val is None:
             return DEFAULT_LOWER_PTG
         elif val < 0 or val > 1:
@@ -78,6 +88,7 @@ class ArgsParser:
     def get_upper_ptg(self):
         DEFAULT_UPPER_PTG = 0.4
         val = float(self.get_arg("-u", "--upper-ptg", default=DEFAULT_UPPER_PTG))
+
         if val is None:
             return DEFAULT_UPPER_PTG
         elif val < 0 or val > 1:
@@ -86,3 +97,14 @@ class ArgsParser:
         else:
             return val
         
+    def get_img_width(self):
+        DEFAULT_IMG_WIDTH = 80
+        val = int(self.get_arg("-w", "--img-width", default=DEFAULT_IMG_WIDTH))
+
+        if val is None:
+            return DEFAULT_IMG_WIDTH
+        elif val <= 0:
+            print("Invalid image width. Using default image width.")
+            return DEFAULT_IMG_WIDTH
+        else:
+            return val        

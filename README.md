@@ -33,18 +33,20 @@ You can run the script using shell:
 ```
 Or using python:
 ```
-python src/AsciiArt.py <args?>
+python src/ascii_art.py <args?>
 ```
 
 ## Arguments
 All the following arguments are optional.
 
-- __Image:__ the path of your input image, defaults to Nick Cage.<br>`-i <img_path>` or `--img <img_path>`
+- __Image:__ the path of your input image, defaults to Nick Cage.<br>`-i <img_path>` &nbsp; or &nbsp;  `--img <img_path>`
 
-- __Charset:__ the size of charset for your ASCII art (options: `tiny`, `small`, `medium`, `large`), defaults to `small`.<br>`-c <charset>` or `--charset <charset>`
+- __Image Width:__ the "ASCII pixel" (two horizontally adjacent ASCII characters) width of your output ASCII image, defaults to `80`.<br>`-w <img-width>` &nbsp; or &nbsp; `--img-width <img-width>`
 
-- __Sampler:__ the pixel density sampler type (options: `linear`, `log`, `exp`), defaults to `linear`.<br>`-s <sampler>` or `--sampler <sampler>`
+- __Charset:__ the size of charset for your ASCII image (options: `tiny`, `small`, `medium`, `large`), defaults to `small`.<br>`-c <charset>` &nbsp; or &nbsp; `--charset <charset>`
 
-- __Lower Bound:__ the lower bound of pixel density sampling, defaults to `0.2`. Bounded in the range [0,1].<br>`-l <lower-ptg>` or `--lower-ptg <lower-ptg>`
+- __Sampler:__ the pixel density sampler type (options: `linear`, `log`, `exp`), defaults to `linear`.<br>`-s <sampler>` &nbsp; or &nbsp; `--sampler <sampler>`
 
-- __Upper Bound:__ the upper bound of pixel density sampling, defaults to `0.4`. Bounded in the range [0,1].<br>`-u <upper-ptg>` or `--upper-ptg <upper-ptg>`
+- __Lower Bound:__ the lower bound of pixel density sampling, defaults to `0.2`. Bounded in the range [0,1].<br>`-l <lower-ptg>` &nbsp; or &nbsp; `--lower-ptg <lower-ptg>`
+
+- __Upper Bound:__ the upper bound of pixel density sampling, defaults to `0.4`. Bounded in the range [0,1].<br>`-u <upper-ptg>` &nbsp; or &nbsp; `--upper-ptg <upper-ptg>`

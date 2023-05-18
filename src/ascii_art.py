@@ -1,5 +1,5 @@
 import numpy as np
-from ArgsParser import ArgsParser
+from args_parser import ArgsParser
 
 class AsciiArt:
 
@@ -11,7 +11,7 @@ class AsciiArt:
             print("".join(row))
 
     def get_ascii_image(self):
-        img_arr = self.args.get_bw_image()
+        img_arr = self.args.get_resized_bw_img()
         charset = self.args.get_charset()
         sampler = self.args.get_sampler()
         lower_ptg = self.args.get_lower_ptg()
