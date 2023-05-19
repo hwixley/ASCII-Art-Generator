@@ -45,7 +45,7 @@ class ArgsParser:
         DEFAULT_CHARSET = "small"
         val = self.get_arg("-c", "--charset", DEFAULT_CHARSET)
 
-        if val not in self.CHARSETS.keys():    
+        if val not in self.CHARSETS.keys():
             print("Invalid charset. Using default charset.")
             return self.CHARSETS[DEFAULT_CHARSET]
         else:
