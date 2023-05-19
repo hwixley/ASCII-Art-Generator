@@ -31,7 +31,7 @@ class AsciiArt:
             idxs = list(set(lt_idxs).intersection(gt_idxs))
 
             for idx in idxs:
-                ascii_arr[idx[0]][idx[1]] = charset[i]*2
+                ascii_arr[idx[0]][idx[1]] = charset[i]*self.args.get_char_multiplier()
         return ascii_arr
 
     def get_ptgs(self, n, sampler, lower_ptg, upper_ptg):

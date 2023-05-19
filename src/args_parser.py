@@ -107,4 +107,11 @@ class ArgsParser:
             print("Invalid image width. Using default image width.")
             return DEFAULT_IMG_WIDTH
         else:
-            return val        
+            return val     
+
+    def get_char_multiplier(self):
+        width = self.get_img_width()
+        multipliers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
+        for i, mult in enumerate(multipliers):
+            if width <= mult:
+                return i + 1
