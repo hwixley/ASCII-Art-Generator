@@ -12,8 +12,8 @@ class ArgsParser:
     }
     SAMPLERS = ["linear", "log", "exp"]
 
-    def __init__(self):
-        self.args = sys.argv
+    def __init__(self, args=sys.argv):
+        self.args = args or sys.argv
 
     def get(self, arg_name, default):
         try:

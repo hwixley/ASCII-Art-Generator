@@ -3,8 +3,8 @@ from args_parser import ArgsParser
 
 class AsciiArt:
 
-    def __init__(self):
-        self.args = ArgsParser()
+    def __init__(self, args=None):
+        self.args = ArgsParser(args)
 
     def print_ascii_image(self):
         for row in self.get_ascii_image():
