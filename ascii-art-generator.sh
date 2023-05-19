@@ -2,4 +2,4 @@
 
 cd src || exit
 python3 ascii_art.py "$@"
-cd - || exit
+{ cd - || exit ; } > /dev/null
