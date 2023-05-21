@@ -38,7 +38,11 @@ class ArgsParser:
                 img_path = DEFAULT_IMG
         img = Image.open(img_path).convert('L')
         ratio = img.size[0] / img.size[1]
-        img = img.resize((new_width, int(new_width / ratio)))
+        height = int(new_width / ratio)
+        if height < 1:
+            new_width = int(new_width * ratio)
+            height = 1
+        img = img.resize((new_width, height))
         return np.array(img)
         
     def get_charset(self):
