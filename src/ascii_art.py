@@ -1,6 +1,3 @@
-import numpy as np
-from args_parser import ArgsParser
-from image_generator import ImageGenerator
 from pixel_sampler import PixelSampler
 
 class AsciiArt:
