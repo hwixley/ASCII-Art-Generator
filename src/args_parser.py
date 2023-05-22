@@ -14,6 +14,8 @@ class ArgsParser:
 
     def __init__(self):
         self.args = sys.argv
+        self.image = None
+        self.scaledImage = None
 
     def get(self, arg_name, default=None):
         try:
@@ -37,16 +39,16 @@ class ArgsParser:
             return None
         else:
             if not os.path.exists(img_path):
-                # print(os.getcwd())
                 if os.path.exists(f"{os.getcwd()}/{img_path}"):
                     img_path = f"{os.getcwd()}/{img_path}"
                 else:
                     print("Invalid image path. Using default image.")
                     img_path = DEFAULT_IMG
-            img = Image.open(img_path).convert('L')
-            ratio = img.size[0] / img.size[1]
-            img = img.resize((new_width, int(new_width / ratio)))
-            return np.array(img)
+            self.image = Image.open(img_path).convert('L')
+            ratio = self.image.size[0] / self.image.size[1]
+            new_height = int(new_width / ratio)
+            self.scaledImage = self.image.resize((new_width, new_height))
+            return np.array(self.scaledImage)
         
     def get_charset(self):
         DEFAULT_CHARSET = "small"
@@ -109,9 +111,23 @@ class ArgsParser:
         else:
             return val     
 
-    def get_char_multiplier(self):
+    def get_img_height(self):
+        if self.scaledImage is None:
+            self.get_resized_bw_img()
+        
+        return self.scaledImage.size[1]
+
+
+    def get_ascii_pixel_size(self):
         width = self.get_img_width()
+        height = self.get_img_height()
+        ratio = width / height
+
+        # max_chars = 
+
         multipliers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         for i, mult in enumerate(multipliers):
             if width <= mult:
-                return i + 1
+                cols = i + 1
+                rows = int(cols / ratio)
+                return (rows, cols)
