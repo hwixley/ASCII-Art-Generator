@@ -1,4 +1,5 @@
 from pixel_sampler import PixelSampler
+from datetime import datetime
 
 class AsciiArt:
 
@@ -18,4 +19,5 @@ class AsciiArt:
 if __name__ == "__main__":
     aa = AsciiArt()
     aa.print_ascii_image()
-    # aa.save_ascii_image("ascii_art.png")
+    if aa.sampler.args.get_should_generate_image():
+            aa.save_ascii_image(f"../data/generated/ascii_art_{datetime.today().strftime('%Y-%m-%d %H:%M:%S')}.png")
