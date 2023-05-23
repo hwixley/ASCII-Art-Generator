@@ -40,7 +40,7 @@ class ImageGenerator:
 
         # make a sufficiently sized background image based on the combination of font and lines
         font_points_to_pixels = lambda pt: round(pt * 96.0 / 72)
-        margin_pixels = 20
+        margin_pixels = 0
 
         # height of the background image
         tallest_line = max(self.lines, key=lambda line: font.getsize(line)[self.PIL_HEIGHT_INDEX])
@@ -50,7 +50,7 @@ class ImageGenerator:
 
         # width of the background image
         widest_line = max(self.lines, key=lambda s: font.getsize(s)[self.PIL_WIDTH_INDEX])
-        max_line_width = font_points_to_pixels(font.getsize(widest_line)[self.PIL_WIDTH_INDEX])
+        max_line_width = font_points_to_pixels(font.getsize(widest_line)[self.PIL_WIDTH_INDEX])*0.75
         image_width = int(ceil(max_line_width + (2 * margin_pixels)))
 
         # draw the background

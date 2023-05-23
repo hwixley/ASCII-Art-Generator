@@ -9,6 +9,8 @@ class PixelSampler:
         self.image_generator = ImageGenerator(self.get_ascii_image())
 
     def get_ascii_image(self):
+        self.args.check_for_invalid_args()
+        
         img_arr = self.args.get_resized_bw_img()
         charset = self.args.get_charset()
 

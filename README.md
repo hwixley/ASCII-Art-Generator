@@ -3,7 +3,7 @@ A customisable script to transform images into ASCII art.
 
 <hr>
 
-![CODEQL](https://github.com/hwixley/ascii-art-generator/actions/workflows/codeql.yml/badge.svg)
+![CODEQL](https://github.com/hwixley/ascii-art-generator/actions/workflows/codeql.yml/badge.svg) ![Python](https://img.shields.io/badge/Python-3.8.10-purple?labelColor=gray&style=flat) ![Version](https://img.shields.io/badge/Version-0.0.1-blue?labelColor=gray&style=flat)
 
 <hr>
 
@@ -19,7 +19,7 @@ Input image                |  Output ASCII
    ```
 2. Install the dependencies:
    ```
-   pip install -r requirements.txt
+   pip3 install -r requirements.txt
    ```
 
 ## Run the script
@@ -29,7 +29,7 @@ chmod +x ascii-art-generator.sh && ./ascii-art-generator.sh
 ```
 Or using python:
 ```
-python src/ascii_art.py
+python3 src/ascii_art.py
 ```
 
 ## Arguments
@@ -46,3 +46,11 @@ All the following arguments are optional.
 - __Lower Bound:__ the lower bound of pixel density sampling, defaults to `0.2`. Bounded in the range [0,1].<br>`-l <lower-ptg>` &nbsp; or &nbsp; `--lower-ptg <lower-ptg>`
 
 - __Upper Bound:__ the upper bound of pixel density sampling, defaults to `0.4`. Bounded in the range [0,1].<br>`-u <upper-ptg>` &nbsp; or &nbsp; `--upper-ptg <upper-ptg>`
+
+- __Save/generate image:__ if specified will put the ASCII art into a PNG.<br>`-g` &nbsp; or &nbsp; `--gen-img`
+
+### Utility Args
+
+- __Help:__ lists available arguments.<br>`-h` &nbsp; or &nbsp; `--help`
+
+- __Version:__ lists current version.<br> `-v` &nbsp; or &nbsp; `--version`
