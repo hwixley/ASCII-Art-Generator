@@ -126,6 +126,6 @@ class ArgsParser:
         multipliers = [50, 100, 150, 200, 250, 300, 350, 400, 450, 500]
         for i, mult in enumerate(multipliers):
             if width <= mult:
-                cols = i + 1
+                cols = i + 2
                 rows = int(cols / ratio)
                 return (rows, cols)

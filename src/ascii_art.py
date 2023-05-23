@@ -33,13 +33,15 @@ class AsciiArt:
             for idx in idxs:
                 ascii_arr[idx[0]][idx[1]] = charset[i]*self.args.get_ascii_pixel_size()[1]
 
-            if self.args.get_ascii_pixel_size()[0] > 1:
-                for idx in idxs:
-                    for j in range(self.args.get_ascii_pixel_size()[0]):
-                        if idx[1]+j < len(ascii_arr[idx[0]]):
-                            ascii_arr[idx[0]][idx[1]+j] = charset[i]*self.args.get_ascii_pixel_size()[1]
-                        else:
-                            ascii_arr[idx[0]] += charset[i]*self.args.get_ascii_pixel_size()[1]
+                if self.args.get_ascii_pixel_size()[0] > 1 and idx[1] < len(ascii_arr[idx[0]]) - 1:
+                    ascii_arr[idx[0]] = ascii_arr[idx[0]][:idx[1]+1] + [charset[i]*self.args.get_ascii_pixel_size()[1]] + ascii_arr[idx[0]][idx[1]+1:]
+
+                # for idx in idxs:
+                #     for j in range(self.args.get_ascii_pixel_size()[0]):
+                #         if idx[1]+j < len(ascii_arr[idx[0]]):
+                #             ascii_arr[idx[0]][idx[1]+j] = charset[i]*self.args.get_ascii_pixel_size()[1]
+                #         else:
+                #             ascii_arr[idx[0]] += charset[i]*self.args.get_ascii_pixel_size()[1]
         return ascii_arr
 
     def get_ptgs(self, n, sampler, lower_ptg, upper_ptg):
