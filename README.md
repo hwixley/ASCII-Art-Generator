@@ -3,7 +3,7 @@ A customisable script to transform images into ASCII art.
 
 <hr>
 
-![CODEQL](https://github.com/hwixley/ascii-art-generator/actions/workflows/codeql.yml/badge.svg) ![Python](https://img.shields.io/badge/Python-3.8.10-purple?labelColor=gray&style=flat) ![Version](https://img.shields.io/badge/Version-0.0.1-blue?labelColor=gray&style=flat)
+![CODEQL](https://github.com/hwixley/ascii-art-generator/actions/workflows/codeql.yml/badge.svg) ![Python](https://img.shields.io/badge/Python-3.8.10-purple?labelColor=gray&style=flat) ![Version](https://img.shields.io/badge/Version-1.0.0-blue?labelColor=gray&style=flat)
 
 <hr>
 
